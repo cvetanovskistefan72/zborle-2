@@ -1,0 +1,1 @@
+export type LetterStatus = "correct" | "incorrect" | "misplaced" | "none";
