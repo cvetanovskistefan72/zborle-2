@@ -25,14 +25,14 @@ function App() {
 
   useEffect(() => {
     const lastGuess = guesses.slice(-1)[0] || [];
-    if (lastGuess?.result){
+    if (lastGuess?.result) {
       toast.success("Го погодивте зборот!");
       setGameOver(true);
     }
-    if (guesses.length === 6 && !lastGuess?.result){
-      toast.error(`Не успеавте да го погодите зборот ${word}.`);
+    if (guesses.length === 6 && !lastGuess?.result) {
+      toast.error(`Не успеавте да го погодите зборот ${word.toUpperCase()}.`);
       setGameOver(true);
-    } 
+    }
   }, [guesses]);
 
   const onEnter = () => {
@@ -44,7 +44,7 @@ function App() {
 
   return (
     <MainLayout>
-      <ToastContainer />
+      <ToastContainer autoClose={10000} />
       <div className="sm:max-w-md mx-auto bg-gray-100 p-4 border border-gray-300 mt-5">
         <InfoHeader headerText="Зборле 2" />
         <div className="mt-5">

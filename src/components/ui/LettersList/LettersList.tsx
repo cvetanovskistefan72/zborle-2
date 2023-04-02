@@ -45,7 +45,7 @@ const LettersList: React.FC<LettersListProps> = ({
           </div>
         ))}
         <div
-          className="bg-red-600 rounded-md flex items-center justify-center text-white font-bold text-1xl cursor-pointer shadow-md hover:shadow-lg transition duration-200"
+          className="bg-red-600  col-span-2 rounded-md flex items-center justify-center text-white font-bold text-1xl cursor-pointer shadow-md hover:shadow-lg transition duration-200"
           onClick={handleDeleteClick}
         >
           &#x232b;
