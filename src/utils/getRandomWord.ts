@@ -1,4 +1,4 @@
-import { WORDS } from "constants/words";
+import { WORDS_FOR_GUESSING } from "constants/wordsForGuessing";
 
 export const getRandomWord = () =>
-  WORDS[Math.floor(Math.random() * WORDS.length)];
+  WORDS_FOR_GUESSING[Math.floor(Math.random() * WORDS_FOR_GUESSING.length)];

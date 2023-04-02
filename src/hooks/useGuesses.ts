@@ -1,13 +1,13 @@
-import { Letter } from "./../models/Letter";
-import { Guess } from "models/Guess";
+import {IGuess} from "models/IGuess";
 import { useState } from "react";
+import { ILetter } from "../models/ILetter";
 
-type UseGuessesType = [Guess[], (lettesr: string[]) => void];
+type UseGuessesType = [IGuess[], (lettesr: string[]) => void];
 
 const useGuesses = (word: string[]): UseGuessesType => {
-  const [guesses, setGuesses] = useState<Guess[]>([]);
+  const [guesses, setGuesses] = useState<IGuess[]>([]);
 
-  const addGuess = (guess: Guess) => {
+  const addGuess = (guess: IGuess) => {
     setGuesses((prevGuesses) => [...prevGuesses, guess]);
   };
 
@@ -15,7 +15,7 @@ const useGuesses = (word: string[]): UseGuessesType => {
     randomWord = randomWord.map((w) => w.toLowerCase());
 
     const isCorrect = randomWord.join("") === word.join("");
-    const mappedLetters: Letter[] = randomWord.map((letter, i) => ({
+    const mappedLetters: ILetter[] = randomWord.map((letter, i) => ({
       letter: letter.toUpperCase(),
       status:
         word.indexOf(letter) === -1
@@ -24,8 +24,8 @@ const useGuesses = (word: string[]): UseGuessesType => {
           ? "correct"
           : "misplaced",
     }));
- 
-    const guess: Guess = {
+
+    const guess: IGuess = {
       letters: mappedLetters,
       result: isCorrect,
     };

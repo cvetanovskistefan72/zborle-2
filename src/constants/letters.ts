@@ -27,7 +27,7 @@ export const LETTERS: string[] = [
   "В",
   "Б",
   "Н",
-  "M",
+  "М",
   "Ѓ",
   "Ж",
 ];

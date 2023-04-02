@@ -1,27 +1,22 @@
-//Organize imports
 import React, { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useLetters from "hooks/useLetters";
+import useGuesses from "hooks/useGuesses";
 import MainLayout from "components/layout/MainLayout";
 import InfoHeader from "components/ui/InfoHeader/InfoHeader";
 import SquareList from "components/ui/SquareList/SquareList";
+import PlayAgain from "components/ui/PlayAgain/PlayAgain";
 import LettersList from "components/ui/LettersList/LettersList";
 import { getRandomWord } from "utils/getRandomWord";
-import useGuesses from "hooks/useGuesses";
 import { stringToArray } from "utils/stringToArray";
 import { WORDS } from "constants/words";
-import PlayAgain from "components/ui/PlayAgain/PlayAgain";
 
 function App() {
   const [letters, addLetter, removeLastLetter, clearLetters] = useLetters();
-  const [word, setWord] = useState("");
+  const [word] = useState(getRandomWord());
   const [guesses, checkGuess] = useGuesses(stringToArray(word));
   const [gameOver, setGameOver] = useState(false);
-
-  useEffect(() => {
-    setWord(getRandomWord());
-  }, []);
 
   useEffect(() => {
     const lastGuess = guesses.slice(-1)[0] || [];
@@ -36,11 +31,15 @@ function App() {
   }, [guesses]);
 
   const onEnter = () => {
-    if(letters.length < 5 && !gameOver) return;
-    if (WORDS.indexOf(letters.join("").toLowerCase()) > 0 && !gameOver) {
+    if (gameOver) return;
+    if (letters.length < 5) return;
+    const enteredWord = letters.join("").toLowerCase();
+    if (WORDS.includes(enteredWord)) {
       clearLetters();
       checkGuess(letters);
-    } else toast.warning("Зборот не постои во речникот.");
+    } else {
+      toast.warning("Зборот не постои во речникот.");
+    }
   };
 
   return (
@@ -58,6 +57,7 @@ function App() {
           onAddLetter={addLetter}
           onEnter={onEnter}
           gameOver={gameOver}
+          finalLetters={letters}
         />
       </div>
       <div className="sm:max-w-2xl mx-auto mt-5">
