@@ -36,6 +36,7 @@ function App() {
   }, [guesses]);
 
   const onEnter = () => {
+    if(letters.length < 5 && !gameOver) return;
     if (WORDS.indexOf(letters.join("").toLowerCase()) > 0 && !gameOver) {
       clearLetters();
       checkGuess(letters);
