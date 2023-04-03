@@ -6,7 +6,6 @@ import useGuesses from "hooks/useGuesses";
 import MainLayout from "components/layout/MainLayout";
 import InfoHeader from "components/ui/InfoHeader/InfoHeader";
 import SquareList from "components/ui/SquareList/SquareList";
-import PlayAgain from "components/ui/PlayAgain/PlayAgain";
 import LettersList from "components/ui/LettersList/LettersList";
 import { getRandomWord } from "utils/getRandomWord";
 import { stringToArray } from "utils/stringToArray";
@@ -59,9 +58,6 @@ function App() {
           gameOver={gameOver}
           finalLetters={letters}
         />
-      </div>
-      <div className="sm:max-w-2xl mx-auto mt-5">
-        <PlayAgain />
       </div>
       {/* <InstructionsModal isOpen /> */}
     </MainLayout>

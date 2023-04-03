@@ -50,7 +50,7 @@ const LettersList: React.FC<LettersList> = ({
   };
 
   return (
-    <div className="bg-gray-100 rounded-md p-3">
+    <div className="bg-gray-100 rounded-md p-2">
       <div className="grid grid-cols-11 gap-2">
         {letters.slice(0, 11).map((letter, i) => (
           <Letter
@@ -69,9 +69,9 @@ const LettersList: React.FC<LettersList> = ({
           />
         ))}
         <Letter
-          className="bg-red-600  col-span-1 rounded-md flex items-center justify-center text-white font-bold text-1xl cursor-pointer shadow-md hover:shadow-lg transition duration-200"
-          letter="&#x232b;"
-          handleClick={handleDeleteClick}
+          className="bg-gray-100  col-span-1 rounded-md flex items-center justify-center text-white font-bold text-1xl cursor-pointer shadow-md hover:shadow-lg transition duration-200"
+          letter=""
+          handleClick={() => {}}
         />
         {letters.slice(22, -1).map((letter, i) => (
           <Letter
@@ -81,6 +81,21 @@ const LettersList: React.FC<LettersList> = ({
             handleClick={handleLetterClick}
           />
         ))}
+        <Letter
+          className="bg-red-600  col-span-2 rounded-md flex items-center justify-center text-white font-bold text-1xl cursor-pointer shadow-md hover:shadow-lg transition duration-200"
+          letter="&#x232b;"
+          handleClick={handleDeleteClick}
+        />
+        <Letter
+          className="bg-gray-100  col-span-2 rounded-md flex items-center justify-center text-white font-bold text-1xl cursor-pointer shadow-md hover:shadow-lg transition duration-200"
+          letter=""
+          handleClick={() => {}}
+        />
+        <Letter
+          className="bg-green-500 col-span-7 rounded-md flex items-center justify-center text-white font-bold text-3xl cursor-pointer shadow-md hover:shadow-lg transition duration-200 p-4"
+          letter="Играј Повторно"
+          handleClick={() => window.location.reload()}
+        />
         <Letter
           className="bg-gray-300 col-span-2 rounded-md flex items-center justify-center text-gray-800 font-bold text-2xl cursor-pointer shadow-md hover:shadow-lg transition duration-200"
           letter="&#x23ce;"

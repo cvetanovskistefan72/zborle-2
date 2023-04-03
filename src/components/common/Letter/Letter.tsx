@@ -8,12 +8,8 @@ interface ILetter {
 
 const Letter: React.FC<ILetter> = ({ className, letter, handleClick }) => {
   return (
-    <div
-      key={letter}
-      className={className}
-      onClick={() => handleClick(letter)}
-    >
-      {letter}
+    <div key={letter} className={className} onClick={() => handleClick(letter)}>
+      <span>{letter}</span>
     </div>
   );
 };
