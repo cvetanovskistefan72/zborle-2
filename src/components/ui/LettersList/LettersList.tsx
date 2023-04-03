@@ -92,7 +92,7 @@ const LettersList: React.FC<LettersList> = ({
           handleClick={() => {}}
         />
         <Letter
-          className="bg-green-500 col-span-7 rounded-md flex items-center justify-center text-white font-bold text-3xl cursor-pointer shadow-md hover:shadow-lg transition duration-200 p-4"
+          className="bg-green-500 col-span-7 rounded-md flex items-center justify-center text-white font-bold text-2xl cursor-pointer shadow-md hover:shadow-lg transition duration-200 p-4"
           letter="Играј Повторно"
           handleClick={() => window.location.reload()}
         />
