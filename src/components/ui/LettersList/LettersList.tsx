@@ -69,7 +69,7 @@ const LettersList: React.FC<LettersList> = ({
           />
         ))}
         <Letter
-          className="bg-gray-100  col-span-1 rounded-md flex items-center justify-center text-white font-bold text-1xl cursor-pointer shadow-md hover:shadow-lg transition duration-200"
+          className="bg-gray-100  col-span-1 rounded-md flex items-center justify-center text-white font-bold text-1xl shadow-md"
           letter=""
           handleClick={() => {}}
         />
@@ -87,7 +87,7 @@ const LettersList: React.FC<LettersList> = ({
           handleClick={handleDeleteClick}
         />
         <Letter
-          className="bg-gray-100  col-span-2 rounded-md flex items-center justify-center text-white font-bold text-1xl cursor-pointer shadow-md hover:shadow-lg transition duration-200"
+          className="bg-gray-100  col-span-2 rounded-md flex items-center justify-center text-white font-bold text-1xl  shadow-md"
           letter=""
           handleClick={() => {}}
         />
