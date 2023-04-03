@@ -73,7 +73,7 @@ const LettersList: React.FC<LettersList> = ({
           letter=""
           handleClick={() => {}}
         />
-        {letters.slice(22, -1).map((letter, i) => (
+        {letters.slice(22).map((letter, i) => (
           <Letter
             key={i}
             className={`rounded-md flex items-center justify-center text-gray-800 font-bold text-2xl cursor-pointer shadow-md hover:shadow-lg transition duration-200 p-4`}
@@ -82,7 +82,7 @@ const LettersList: React.FC<LettersList> = ({
           />
         ))}
         <Letter
-          className="bg-red-600  col-span-2 rounded-md flex items-center justify-center text-white font-bold text-1xl cursor-pointer shadow-md hover:shadow-lg transition duration-200"
+          className="bg-red-600  col-span-1 rounded-md flex items-center justify-center text-white font-bold text-1xl cursor-pointer shadow-md hover:shadow-lg transition duration-200"
           letter="&#x232b;"
           handleClick={handleDeleteClick}
         />
